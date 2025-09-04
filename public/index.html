@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Muniz Studio X — Seu negócio multiplicado no digital</title>
+  <meta name="description" content="Sites rápidos, estéticos e prontos para vender no WhatsApp. Muniz Studio X — estúdio criativo no Rio de Janeiro." />
+  <meta property="og:title" content="Muniz Studio X — Seu negócio multiplicado no digital" />
+  <meta property="og:description" content="Sites rápidos, estéticos e prontos para vender no WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://seu-dominio.com" />
+  <meta property="og:image" content="/assets/img/placeholder-1.svg" />
+  <link rel="canonical" href="https://seu-dominio.com/" />
+  <link rel="icon" href="/favicon.svg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { display: ['Inter','ui-sans-serif','system-ui'] },
+          colors: { brand: { DEFAULT:'#5B8CFF', dark:'#3B5BFF', light:'#AFC7FF' } },
+          boxShadow: { glow: '0 0 40px 10px rgba(91, 140, 255, .25)' },
+          animation: { 'slow-spin':'spin 40s linear infinite','float':'float 10s ease-in-out infinite','pulse-soft':'pulseSoft 6s ease-in-out infinite' },
+          keyframes: {
+            float: { '0%,100%':{transform:'translateY(0px)'}, '50%':{transform:'translateY(-8px)'} },
+            pulseSoft: { '0%,100%':{opacity:.6}, '50%':{opacity:1} }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .aurora { position:absolute; inset:-20% -10% auto -10%; height:60vh; filter:blur(60px);
+      background:
+        radial-gradient(35% 60% at 20% 50%, rgba(59,91,255,.25), transparent 60%),
+        radial-gradient(40% 60% at 70% 40%, rgba(175,199,255,.25), transparent 60%),
+        conic-gradient(from 120deg at 70% 30%, rgba(255,255,255,.2), rgba(91,140,255,.35), rgba(255,255,255,.2));
+      mix-blend-mode:screen; opacity:.9; pointer-events:none; }
+    .glass { backdrop-filter: blur(10px); background: rgba(12,14,20,.5); }
+    .glass-light { backdrop-filter: blur(12px); background: rgba(255,255,255,.55); }
+    img[loading="lazy"]{opacity:.001;transition:opacity .4s ease} img.is-loaded{opacity:1}
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-display selection:bg-brand/30">
+  <div class="w-full text-center text-xs md:text-sm bg-slate-900/50 border-b border-white/10 py-2">
+    <span class="opacity-80">Agende seu briefing gratuito • respostas no mesmo dia</span>
+  </div>
+  <header class="sticky top-0 z-50">
+    <div class="glass border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+        <a href="#" class="flex items-center gap-2 group">
+          <span class="relative inline-flex h-6 w-6">
+            <span class="absolute inset-0 rounded-full bg-brand/70 blur-sm animate-pulse-soft"></span>
+            <span class="relative inline-block h-6 w-6 rounded-md bg-gradient-to-tr from-brand to-brand-light shadow-glow"></span>
+          </span>
+          <span class="font-semibold tracking-wide">Muniz Studio X</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#planos" class="hover:text-brand-light">Planos</a>
+          <a href="#portfolio" class="hover:text-brand-light">Portfólio</a>
+          <a href="#processo" class="hover:text-brand-light">Processo</a>
+          <a href="#depo" class="hover:text-brand-light">Depoimentos</a>
+          <a href="#sobre" class="hover:text-brand-light">Sobre</a>
+          <a href="#contato" class="px-3 py-1.5 rounded-lg bg-brand hover:bg-brand-dark transition shadow-glow">WhatsApp</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-lg glass border border-white/10" aria-label="Abrir menu">☰</button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-slate-900/95 border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-4 py-3 grid gap-2 text-sm">
+        <a href="#planos" class="py-2">Planos</a>
+        <a href="#portfolio" class="py-2">Portfólio</a>
+        <a href="#processo" class="py-2">Processo</a>
+        <a href="#depo" class="py-2">Depoimentos</a>
+        <a href="#sobre" class="py-2">Sobre</a>
+        <a href="#contato" class="py-2">WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="relative overflow-hidden">
+    <div class="aurora animate-float"></div>
+    <div class="max-w-7xl mx-auto px-4 md:px-6 pt-16 pb-24 md:pb-32 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h1 class="text-3xl md:text-5xl font-bold leading-tight">
+          Seu negócio <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand-light">multiplicado no digital</span>
+        </h1>
+        <p class="mt-4 text-slate-300/90 md:text-lg">Sites rápidos, criativos e com estética premium — prontos para vender no WhatsApp. Construídos com foco em performance, imagens otimizadas e manutenção simples.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a id="ctaHero" href="#contato" class="px-5 py-3 rounded-xl bg-brand hover:bg-brand-dark shadow-glow">Chamar no WhatsApp</a>
+          <a href="#portfolio" class="px-5 py-3 rounded-xl glass border border-white/10 hover:bg-white/10">Ver Portfólio</a>
+        </div>
+        <div class="mt-6 flex items-center gap-4 text-xs opacity-70">
+          <span>⚡ Carrega em &lt; 2s</span>
+          <span>🖼️ Imagens WebP</span>
+          <span>🔒 Seguro & SEO</span>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="glass-light rounded-2xl p-4 md:p-6 shadow-glow border border-white/30">
+          <div class="rounded-xl overflow-hidden aspect-[4/3] bg-gradient-to-tr from-slate-200 to-slate-50 relative">
+            <div class="absolute -top-10 -right-10 h-40 w-40 bg-brand/40 blur-2xl rounded-full animate-slow-spin"></div>
+            <img src="/assets/img/placeholder-1.svg" loading="lazy" alt="Prévia de case" class="absolute inset-0 w-full h-full object-cover is-loaded">
+          </div>
+          <div class="mt-3">
+            <div class="flex items-center justify-between">
+              <h3 class="font-semibold text-slate-900">Case em destaque</h3>
+              <span class="text-xs text-slate-700">2025</span>
+            </div>
+            <p class="text-slate-700/80 text-sm">Landing de alta conversão com carrossel hero, CTA WhatsApp e grid de produtos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="planos" class="relative py-16 md:py-24 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="max-w-2xl">
+        <h2 class="text-2xl md:text-3xl font-bold">Planos que cabem no seu agora</h2>
+        <p class="text-slate-300/80 mt-2">Comece enxuto e evolua quando for a hora. Todos com WhatsApp integrado e imagens otimizadas.</p>
+      </div>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <article class="rounded-2xl glass border border-white/10 p-6">
+          <h3 class="font-semibold text-lg">Bronze</h3>
+          <p class="text-slate-300/80 text-sm mt-1">Kit de partida</p>
+          <p class="mt-3 text-2xl font-bold">R$ 999</p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
+            <li>• One‑page responsiva</li>
+            <li>• CTA WhatsApp + QR</li>
+            <li>• 2 banners hero</li>
+            <li>• Otimização de 12 imagens</li>
+            <li>• Publicação (Cloudflare Pages)</li>
+          </ul>
+          <p class="mt-4 text-xs opacity-70">Manutenção essencial R$ 99/mês</p>
+          <a href="#contato" class="mt-6 inline-block px-4 py-2 rounded-lg bg-brand hover:bg-brand-dark shadow-glow">Quero começar</a>
+        </article>
+        <article class="rounded-2xl border border-brand/30 p-6 bg-gradient-to-b from-white/10 to-white/5">
+          <h3 class="font-semibold text-lg">Prata</h3>
+          <p class="text-slate-300/80 text-sm mt-1">Crescimento</p>
+          <p class="mt-3 text-2xl font-bold">R$ 1.499</p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
+            <li>• Tudo do Bronze</li>
+            <li>• 4 banners sazonais/mês</li>
+            <li>• Logo refinado</li>
+            <li>• Relatório básico mensal</li>
+            <li>• SLA 24h úteis</li>
+          </ul>
+          <p class="mt-4 text-xs opacity-70">Manutenção completa R$ 149/mês</p>
+          <a href="#contato" class="mt-6 inline-block px-4 py-2 rounded-lg bg-brand hover:bg-brand-dark shadow-glow">Quero subir de nível</a>
+        </article>
+        <article class="rounded-2xl glass border border-white/10 p-6">
+          <h3 class="font-semibold text-lg">Gold</h3>
+          <p class="text-slate-300/80 text-sm mt-1">VIP</p>
+          <p class="mt-3 text-2xl font-bold">R$ 2.499</p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
+            <li>• Tudo do Prata</li>
+            <li>• Consultoria quinzenal</li>
+            <li>• Imagens avançadas</li>
+            <li>• Prioridade máxima</li>
+            <li>• Ajustes contínuos</li>
+          </ul>
+          <p class="mt-4 text-xs opacity-70">Manutenção VIP R$ 249/mês</p>
+          <a href="#contato" class="mt-6 inline-block px-4 py-2 rounded-lg bg-brand hover:bg-brand-dark shadow-glow">Quero VIP</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="flex items-end justify-between gap-4">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold">Portfólio</h2>
+          <p class="text-slate-300/80 mt-2">Alguns dos trabalhos e experimentos criativos do estúdio.</p>
+        </div>
+        <div class="text-xs opacity-70">*Substitua as imagens pelos seus cases reais</div>
+      </div>
+      <div id="portfolioGrid" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+
+  <section id="processo" class="py-16 md:py-24 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <h2 class="text-2xl md:text-3xl font-bold">Como trabalhamos</h2>
+      <div class="mt-8 grid md:grid-cols-4 gap-6 text-sm">
+        <div class="rounded-2xl glass border border-white/10 p-5"><h3 class="font-semibold">1) Briefing</h3><p class="mt-2 text-slate-300/80">Entendo seu negócio, público e objetivo. Definimos conteúdo e referências.</p></div>
+        <div class="rounded-2xl glass border border-white/10 p-5"><h3 class="font-semibold">2) Design</h3><p class="mt-2 text-slate-300/80">Wireframe rápido e visual criativo com ênfase em luz/aurora.</p></div>
+        <div class="rounded-2xl glass border border-white/10 p-5"><h3 class="font-semibold">3) Publicação</h3><p class="mt-2 text-slate-300/80">Hospedo no Cloudflare Pages e conecto seu domínio.</p></div>
+        <div class="rounded-2xl glass border border-white/10 p-5"><h3 class="font-semibold">4) Manutenção</h3><p class="mt-2 text-slate-300/80">“Plano de Saúde Digital” para evoluir com segurança.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="depo" class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <h2 class="text-2xl md:text-3xl font-bold">Depoimentos</h2>
+      <div id="depoGrid" class="mt-8 grid md:grid-cols-3 gap-6 text-sm"></div>
+    </div>
+  </section>
+
+  <section id="sobre" class="py-16 md:py-24 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 grid md:grid-cols-3 gap-8 items-start">
+      <div class="md:col-span-2">
+        <h2 class="text-2xl md:text-3xl font-bold">Sobre o estúdio</h2>
+        <p class="mt-4 text-slate-300/90">Sou Felipe Muniz, criador do Muniz Studio X. Ajudo micro e pequenos negócios a terem presença digital premium: sites rápidos, imagens ótimas, manutenção simples e foco em conversão via WhatsApp. Trago experiência em performance, SEO básico e um olhar criativo para destacar a sua marca.</p>
+        <ul class="mt-4 grid sm:grid-cols-2 gap-2 text-sm text-slate-300/80">
+          <li>• Zona Norte/RJ • Atendimento remoto</li>
+          <li>• Cloudflare Pages • GitHub</li>
+          <li>• HTML + Tailwind/Twind</li>
+          <li>• Otimização de Imagens (WebP)</li>
+        </ul>
+      </div>
+      <aside class="rounded-2xl glass border border-white/10 p-6">
+        <h3 class="font-semibold">Seus próximos passos</h3>
+        <ol class="mt-3 list-decimal list-inside text-sm text-slate-300/90 space-y-1">
+          <li>Envie 2–3 cases (imagens/textos).</li>
+          <li>Confirme plano e orçamento.</li>
+          <li>Compartilhe domínio/WhatsApp.</li>
+        </ol>
+        <a href="#contato" class="mt-4 inline-block px-4 py-2 rounded-lg bg-brand hover:bg-brand-dark shadow-glow">Falar comigo</a>
+      </aside>
+    </div>
+  </section>
+
+  <section id="contato" class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 md:px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold">Bora multiplicar o seu negócio?</h2>
+      <p class="text-slate-300/80 mt-2">Me chama no WhatsApp com seu nome e segmento que eu respondo ainda hoje.</p>
+      <div class="mt-6 flex items-center justify-center gap-3">
+        <a id="ctaWhatsApp" href="https://wa.me/55SEUNUMERO?text=Ol%C3%A1%2C%20Felipe!%20Vim%20pelo%20site%20Muniz%20Studio%20X." target="_blank" rel="noopener" class="px-6 py-3 rounded-xl bg-brand hover:bg-brand-dark shadow-glow">Chamar no WhatsApp</a>
+        <a id="ctaEmail" href="mailto:contato@seudominio.com" class="px-6 py-3 rounded-xl glass border border-white/10">contato@seudominio.com</a>
+      </div>
+      <p class="text-xs opacity-60 mt-4">Ao clicar, você concorda com o contato para fins de orçamento.</p>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 py-10">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 text-sm text-slate-400">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>© <span id="year"></span> Muniz Studio X. Todos os direitos reservados.</div>
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:text-slate-200">Termos</a>
+          <a href="#" class="hover:text-slate-200">Privacidade</a>
+          <a id="igLink" href="https://instagram.com/seuuser" class="hover:text-slate-200" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a id="waFloat" href="https://wa.me/55SEUNUMERO?text=Ol%C3%A1%2C%20Felipe!%20Vim%20pelo%20site%20Muniz%20Studio%20X." target="_blank" rel="noopener" class="fixed bottom-4 right-4 h-12 w-12 rounded-full bg-green-500 grid place-items-center shadow-lg hover:scale-105 transition" aria-label="Abrir WhatsApp">
+    <img src="/assets/icons/whatsapp.svg" alt="" class="h-6 w-6"/>
+  </a>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById('menuBtn'); const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Smooth scroll para #contato se usar âncoras
+    document.querySelectorAll('a[href="#contato"]').forEach(a => {
+      a.addEventListener('click', (e) => { const el = document.querySelector('#contato'); if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }); } });
+    });
+
+    // Injeção de dados (site.json, portfolio.json, testimonials.json)
+    async function loadData(){
+      try {
+        const site = await fetch('/../data/site.json').then(r=>r.json());
+        const port = await fetch('/../data/portfolio.json').then(r=>r.json());
+        const depo = await fetch('/../data/testimonials.json').then(r=>r.json());
+
+        // WhatsApp / Instagram / Email
+        const tel = site.phoneInternational || '55SEUNUMERO';
+        const ig  = site.instagram || 'seuuser';
+        const em  = site.email || 'contato@seudominio.com';
+
+        const waMsg = encodeURIComponent('Olá, Felipe! Vim pelo site Muniz Studio X.');
+        const waUrl = `https://wa.me/${tel}?text=${waMsg}`;
+        ['ctaWhatsApp','waFloat','ctaHero'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.href = waUrl;
+        });
+        const igLink = document.getElementById('igLink');
+        if (igLink) igLink.href = `https://instagram.com/${ig}`;
+        const ctaEmail = document.getElementById('ctaEmail');
+        if (ctaEmail) ctaEmail.href = `mailto:${em}`;
+
+        // Portfólio
+        const grid = document.getElementById('portfolioGrid');
+        grid.innerHTML = port.map(item => `
+          <a href="#" class="group rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10 transition block">
+            <img src="${item.img}" alt="${item.title}" loading="lazy" width="1200" height="800" onload="this.classList.add('is-loaded')">
+            <div class="p-4">
+              <div class="flex items-center justify-between">
+                <h3 class="font-semibold">${item.title}</h3>
+                <span class="text-xs opacity-70">${item.year}</span>
+              </div>
+              <p class="text-sm text-slate-300/80 mt-1">${item.desc}</p>
+            </div>
+          </a>
+        `).join('');
+
+        // Depoimentos
+        const depoGrid = document.getElementById('depoGrid');
+        depoGrid.innerHTML = depo.map(d => `
+          <figure class="rounded-2xl glass border border-white/10 p-5">
+            <blockquote class="text-slate-300/90">“${d.quote}”</blockquote>
+            <figcaption class="mt-3 text-slate-400">— ${d.author}</figcaption>
+          </figure>
+        `).join('');
+      } catch(e){
+        console.warn('Data injection fallback:', e);
+      }
+    }
+    loadData();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Muniz Studio X",
+    "description": "Sites rápidos, criativos e prontos para vender no WhatsApp.",
+    "areaServed": "Rio de Janeiro - Zona Norte",
+    "url": "https://seu-dominio.com",
+    "telephone": "+55SEUNUMERO",
+    "sameAs": ["https://instagram.com/seuuser"],
+    "address": {"@type":"PostalAddress","addressLocality":"Rio de Janeiro","addressRegion":"RJ","addressCountry":"BR"}
+  }
+  </script>
+</body>
+</html>

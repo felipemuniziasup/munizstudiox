@@ -1,0 +1,3 @@
+# Ignore localhost and wa.me schema parameter noise
+exclude = ["http://localhost:5173", "https://wa.me/*"]
+max_redirects = 5

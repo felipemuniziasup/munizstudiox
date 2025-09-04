@@ -1,0 +1,9 @@
+{
+  "name": "Muniz Studio X",
+  "short_name": "MSX",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#5B8CFF",
+  "icons": []
+}

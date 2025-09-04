@@ -1,0 +1,14 @@
+{
+  "name": "muniz-studio-x-starter-v1",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "http-server -p 5173 public",
+    "build": "node scripts/build.js",
+    "optimize-images": "node scripts/optimize-images.js",
+    "gen:sitemap": "node scripts/gen-sitemap.js"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
