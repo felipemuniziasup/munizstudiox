@@ -2,23 +2,40 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Dev server",
+      "label": "Preview (npm run dev)",
       "type": "shell",
       "command": "npm run dev",
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      }
+      "group": { "kind": "build" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated", "focus": true }
     },
     {
-      "label": "Build",
+      "label": "Deploy (Preview - branch dev)",
       "type": "shell",
-      "command": "npm run build"
+      "command": "git checkout -B dev && git add . && git commit --allow-empty -m \"chore: preview (dev)\" && git push -u origin dev",
+      "group": { "kind": "build" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
     },
     {
-      "label": "Optimize Images",
+      "label": "Deploy (Produção - branch main)",
       "type": "shell",
-      "command": "npm run optimize-images"
+      "command": "git checkout -B main && git add . && git commit --allow-empty -m \"deploy: produção (main)\" && git push -u origin main",
+      "group": { "kind": "build" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    },
+    {
+      "label": "Kill 5173 (liberar porta preview)",
+      "type": "shell",
+      "command": "cmd",
+      "args": [
+        "/d", "/c",
+        "for /f \"tokens=5\" %%a in ('netstat -ano ^| findstr :5173') do taskkill /PID %%a /F"
+      ],
+      "group": { "kind": "build" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
     }
   ]
 }

@@ -8,9 +8,9 @@
   <meta property="og:title" content="Muniz Studio X — Seu negócio multiplicado no digital" />
   <meta property="og:description" content="Sites rápidos, estéticos e prontos para vender no WhatsApp." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://seu-dominio.com" />
+  <meta property="og:url" content="https://munizstudiox.pages.dev" />
   <meta property="og:image" content="/assets/img/placeholder-1.svg" />
-  <link rel="canonical" href="https://seu-dominio.com/" />
+  <link rel="canonical" href="https://munizstudiox.pages.dev/" />
   <link rel="icon" href="/favicon.svg" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -265,9 +265,9 @@
     // Injeção de dados (site.json, portfolio.json, testimonials.json)
     async function loadData(){
       try {
-        const site = await fetch('/../data/site.json').then(r=>r.json());
-        const port = await fetch('/../data/portfolio.json').then(r=>r.json());
-        const depo = await fetch('/../data/testimonials.json').then(r=>r.json());
+        const site = await fetch('/data/site.json').then(r=>r.json());
+        const port = await fetch('/data/portfolio.json').then(r=>r.json());
+        const depo = await fetch('/data/testimonials.json').then(r=>r.json());
 
         // WhatsApp / Instagram / Email
         const tel = site.phoneInternational || '55SEUNUMERO';
@@ -322,7 +322,7 @@
     "name": "Muniz Studio X",
     "description": "Sites rápidos, criativos e prontos para vender no WhatsApp.",
     "areaServed": "Rio de Janeiro - Zona Norte",
-    "url": "https://seu-dominio.com",
+    "url": "https://munizstudiox.pages.dev",
     "telephone": "+55SEUNUMERO",
     "sameAs": ["https://instagram.com/seuuser"],
     "address": {"@type":"PostalAddress","addressLocality":"Rio de Janeiro","addressRegion":"RJ","addressCountry":"BR"}
