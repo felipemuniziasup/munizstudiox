@@ -1,20 +1,26 @@
 [
   {
-    "title": "Nando Importados — One‑page",
+    "title": "Nando Importados — Onepage",
     "year": "2025",
+    "stack": "HTML • CSS • JS • Cloudflare Pages",
     "desc": "Landing de alta conversão com carrossel hero, CTA WhatsApp e grid de produtos.",
-    "img": "/assets/img/placeholder-1.svg"
+    "img": { "webp": "/assets/img/placeholder-1.svg" },
+    "link": "#"
   },
   {
-    "title": "Barbearia — One‑page",
+    "title": "Mellofit — Academia",
     "year": "2025",
-    "desc": "Estética escura, agendamento WhatsApp.",
-    "img": "/assets/img/placeholder-2.svg"
+    "stack": "Estático • SEO • Otimização",
+    "desc": "Estratégia de leads com seções diretas, tempo de carregamento abaixo de 1s.",
+    "img": { "webp": "/assets/img/placeholder-2.svg" },
+    "link": "#"
   },
   {
-    "title": "Restô — Cardápio",
-    "year": "2024",
-    "desc": "Cardápio rápido + QR Mesa.",
-    "img": "/assets/img/placeholder-3.svg"
+    "title": "Campanha Sazonal",
+    "year": "2025",
+    "stack": "Landing rápida",
+    "desc": "Arte forte e call-to-action simples, integrada ao WhatsApp.",
+    "img": { "webp": "/assets/img/placeholder-3.svg" },
+    "link": "#"
   }
 ]

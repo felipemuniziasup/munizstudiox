@@ -1,9 +1,13 @@
 {
-  "studioName": "Muniz Studio X 🚀 Preview",
+  "brand": "Muniz Studio X",
   "phoneInternational": "5521970128580",
-  "instagram": "seuuser",
-  "email": "felipemuniziasup@gmail.com",
-  "city": "Rio de Janeiro",
-  "region": "RJ",
-  "areaServed": "Rio de Janeiro - Zona Norte"
+  "instagram": "munizstudiox",
+  "email": "contato@munizstudiox.com.br",
+  "defaultMessage": "Quero um site de alta performance e conversão.",
+  "address": "Brasil",
+  "social": {
+    "instagram": "https://instagram.com/munizstudiox",
+    "whatsapp": "",
+    "email": "mailto:contato@munizstudiox.com.br"
+  }
 }

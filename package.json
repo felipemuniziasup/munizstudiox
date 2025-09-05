@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "http-server -p 5173 public",
     "build": "node scripts/build.js",
-    "optimize-images": "node scripts/optimize-images.js",
-    "gen:sitemap": "node scripts/gen-sitemap.js"
+    "logos": "node scripts/generate-logos.js",
+    "optimize": "node scripts/optimize-images.js",
+    "sitemap": "node scripts/gen-sitemap.js"
   },
   "devDependencies": {
     "fs-extra": "^11.3.1",

@@ -3,7 +3,25 @@
   "short_name": "MSX",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0b1220",
-  "theme_color": "#5B8CFF",
-  "icons": []
+  "background_color": "#0b0f14",
+  "theme_color": "#0b0f14",
+  "description": "Estúdio criativo de alta performance: landing pages, sites e branding com velocidade e conversão.",
+  "icons": [
+    {
+      "src": "/assets/logos/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/logos/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/logos/logo-flat-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }

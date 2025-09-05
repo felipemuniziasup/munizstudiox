@@ -1,14 +1,20 @@
 [
   {
-    "quote": "Entrega rápida e resultado acima do esperado.",
-    "author": "Andresa, RJ"
+    "name": "Cliente A",
+    "role": "E-commerce",
+    "quote": "Chegamos em mais pessoas e vendemos melhor.",
+    "avatar": "/assets/img/placeholder-1.svg"
   },
   {
-    "quote": "O WhatsApp bombou depois do novo site.",
-    "author": "Nando, Vila da Penha"
+    "name": "Cliente B",
+    "role": "Academia",
+    "quote": "O site carrega rápido e o WhatsApp tocou no mesmo dia.",
+    "avatar": "/assets/img/placeholder-2.svg"
   },
   {
-    "quote": "Estética premium sem complicação.",
-    "author": "Carlos, RJ"
+    "name": "Cliente C",
+    "role": "Serviços",
+    "quote": "Processo ágil, design forte e conversão clara. Recomendo!",
+    "avatar": "/assets/img/placeholder-3.svg"
   }
 ]
