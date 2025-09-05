@@ -2,27 +2,30 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Preview (dev)",
+      "label": "Deploy (Produção - branch main)",
+      "type": "shell",
+      "command": "git checkout -B main && git pull --ff-only origin main || echo . && npm run cf:build && git add -A && git commit --allow-empty -m \"deploy: produção (main)\" && git push -u origin main",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Preview (npm run dev)",
       "type": "shell",
       "command": "npm run dev",
+      "group": "none",
       "problemMatcher": []
     },
     {
-      "label": "Build (prod)",
-      "type": "shell",
-      "command": "npm run build",
-      "problemMatcher": []
-    },
-    {
-      "label": "Preview (build)",
+      "label": "Preview dist (npm run preview:dist)",
       "type": "shell",
       "command": "npm run preview:dist",
+      "group": "none",
       "problemMatcher": []
     },
     {
-      "label": "Deploy (push main)",
+      "label": "Kill 5173 (liberar porta preview)",
       "type": "shell",
-      "command": "git add -A && git commit -m \"deploy: produção (build minificado)\" || echo \"nada para commitar\" && git push origin main",
+      "command": "kill-port 5173 || echo .",
       "problemMatcher": []
     }
   ]

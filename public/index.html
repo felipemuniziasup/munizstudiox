@@ -1,30 +1,34 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Muniz Studio X — Criativo, moderno e direto ao resultado</title>
   <meta name="description" content="Estúdio digital focado em sites rápidos, elegantes e que convertem. Branding, landing pages e performance. Fale no WhatsApp.">
-
-  <!-- SEO -->
   <link rel="canonical" href="https://munizstudiox.com.br/">
   <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#0F172A">
 
-  <!-- Open Graph -->
+  <!-- OpenGraph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Muniz Studio X — Criativo, moderno e direto ao resultado">
   <meta property="og:description" content="Sites rápidos, elegantes e que convertem.">
   <meta property="og:url" content="https://munizstudiox.com.br/">
   <meta property="og:image" content="/assets/logos/logo-hero.png">
 
-  <!-- Favicons / Manifest -->
+  <!-- Performance -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+
+  <!-- Preload da hero (melhora LCP) -->
+  <link rel="preload" as="image" href="/assets/logos/logo-reflex-512.webp" imagesrcset="/assets/logos/logo-reflex-256.webp 256w, /assets/logos/logo-reflex-512.webp 512w, /assets/logos/logo-reflex-1024.webp 1024w" imagesizes="(max-width:640px) 80vw, 560px" type="image/webp">
+
+  <!-- Favicons/Manifest -->
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/logos/favicon-512.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/logos/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0F172A">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/theme-munizx.css">
 </head>
 <body>
@@ -34,13 +38,11 @@
   <header class="hero">
     <div class="hero__inner">
       <picture>
-        <!-- WebP com variações -->
         <source type="image/webp"
                 srcset="/assets/logos/logo-reflex-256.webp 256w,
                         /assets/logos/logo-reflex-512.webp 512w,
                         /assets/logos/logo-reflex-1024.webp 1024w"
-                sizes="(max-width: 640px) 80vw, 560px"/>
-        <!-- PNG fallback -->
+                sizes="(max-width: 640px) 80vw, 560px" />
         <img
           src="/assets/logos/logo-reflex.png"
           srcset="/assets/logos/logo-reflex-256.png 256w,
@@ -49,38 +51,32 @@
           sizes="(max-width: 640px) 80vw, 560px"
           alt="Muniz Studio X"
           class="hero__logo"
-          width="560" height="220" loading="eager" decoding="async"/>
+          width="560" height="220" loading="eager" decoding="async">
       </picture>
 
       <p class="hero__tag">Sites rápidos, elegantes e que convertem.</p>
-      <!-- id corrigido para bater com o script -->
-      <a class="btn btn--wa" href="#" id="cta-wa" rel="noopener">Falar no WhatsApp</a>
+      <a class="btn btn--wa" id="cta-wa-1" href="#" rel="noopener">Falar no WhatsApp</a>
     </div>
   </header>
 
-  <main id="conteudo" class="wrap" aria-live="polite">
-    <!-- Portfólio -->
+  <main id="conteudo" class="wrap">
     <section id="portfolio" aria-labelledby="ttl-portfolio">
       <div class="sec-head">
         <h2 id="ttl-portfolio">Portfólio</h2>
         <p class="muted">Projetos com estética forte e performance alta.</p>
       </div>
-
       <div id="portfolio-grid" class="grid"></div>
       <noscript><p class="muted">Ative o JavaScript para visualizar os projetos.</p></noscript>
     </section>
 
-    <!-- Depoimentos -->
     <section id="testimonials" aria-labelledby="ttl-depo">
       <div class="sec-head">
         <h2 id="ttl-depo">O que falam</h2>
         <p class="muted">Clientes satisfeitos com conversões reais.</p>
       </div>
-
       <div id="testimonials-grid" class="grid grid-cols-2"></div>
     </section>
 
-    <!-- CTA final -->
     <section class="callout">
       <h3>Pronto para acelerar seu site?</h3>
       <p>Conte sua ideia e vamos criar algo premium e eficiente.</p>
@@ -92,95 +88,92 @@
     <small>© <span id="year"></span> Muniz Studio X • Todos os direitos reservados.</small>
   </footer>
 
-  <!-- Botão flutuante WA -->
   <a id="wa-float" class="wa-float" href="#" aria-label="WhatsApp" rel="noopener">
     <img src="/assets/icons/whatsapp.svg" width="24" height="24" alt="">
   </a>
 
-  <!-- JSON-LD (Organização) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Muniz Studio X",
-    "url":"https://munizstudiox.com.br/",
-    "logo":"https://munizstudiox.com.br/assets/logos/logo-flat-512.png",
-    "sameAs":[]
-  }
-  </script>
-
-  <!-- Render leve dos JSONs + blur-up + SW -->
   <script>
-  (async () => {
-    const safeJson = async (p, d) => { try { const r = await fetch(p); return r.ok ? r.json() : d; } catch { return d; } };
+    // Dados
+    (async () => {
+      const [site, portfolio, depo] = await Promise.all([
+        fetch('/data/site.json').then(r => r.json()).catch(()=>({})),
+        fetch('/data/portfolio.json').then(r => r.json()).catch(()=>[]),
+        fetch('/data/testimonials.json').then(r => r.json()).catch(()=>[])
+      ]);
 
-    const site      = await safeJson('/data/site.json', {});
-    const portfolio = await safeJson('/data/portfolio.json', []);
-    const depo      = await safeJson('/data/testimonials.json', []);
+      // WhatsApp
+      const waBase = 'https://wa.me/';
+      const waMsg  = encodeURIComponent(site.defaultMessage || 'Quero um site de alta performance');
+      const waNum  = (site.phoneInternational || '').replace(/\D/g,'');
+      if (waNum) {
+        const href = `${waBase}${waNum}?text=${waMsg}`;
+        ['cta-wa-1','cta-wa-2','wa-float'].forEach(id => {
+          const el = document.getElementById(id); if (el) el.href = href;
+        });
+      }
 
-    // WhatsApp automático
-    const waBase = 'https://wa.me/';
-    const waMsg  = encodeURIComponent(site.defaultMessage || 'Quero um site de alta performance');
-    const waNum  = (site.phoneInternational || '').replace(/\D/g,'');
-    if (waNum) {
-      const href = `${waBase}${waNum}?text=${waMsg}`;
-      ['cta-wa','cta-wa-2','wa-float'].forEach(id => { const el = document.getElementById(id); if (el) el.href = href; });
-    }
+      // Portfólio
+      const grid = document.getElementById('portfolio-grid');
+      if (grid && Array.isArray(portfolio)) {
+        grid.innerHTML = portfolio.map(item => {
+          const src = item.img?.webp || item.img?.src || '/assets/logos/logo-flat-512.webp';
+          const alt = item.title || 'Projeto';
+          return `
+            <article class="card hoverlift">
+              <figure class="thumb">
+                <img class="blur-up" loading="lazy" src="${src}" alt="${alt}">
+              </figure>
+              <div class="card-body">
+                <h3>${item.title || 'Projeto'}</h3>
+                <p class="muted small">${item.year || ''} • ${item.stack || ''}</p>
+                <p>${item.desc || ''}</p>
+                ${item.link ? `<a class="btn btn-ghost" href="${item.link}" target="_blank" rel="noopener">Ver projeto</a>` : ``}
+              </div>
+            </article>
+          `;
+        }).join('');
+      }
 
-    // Portfólio (com blur-up)
-    const grid = document.getElementById('portfolio-grid');
-    if (grid && Array.isArray(portfolio)) {
-      grid.innerHTML = portfolio.map(item => {
-        const src = (item.img && (item.img.webp || item.img.src)) || '/assets/logos/logo-flat-512.webp';
-        const alt = item.title || 'Projeto';
-        const year = item.year ? `${item.year}` : '';
-        const stack = item.stack ? ` • ${item.stack}` : '';
-        const btn = item.link ? `<a class="btn btn-ghost" href="${item.link}" target="_blank" rel="noopener noreferrer">Ver projeto</a>` : '';
-        return `
-          <article class="card hoverlift">
-            <figure class="thumb">
-              <img class="blur-up" loading="lazy" src="${src}" alt="${alt}">
-            </figure>
-            <div class="card-body">
-              <h3>${alt}</h3>
-              <p class="muted small">${year}${stack}</p>
-              <p>${item.desc || ''}</p>
-              ${btn}
-            </div>
-          </article>
-        `;
-      }).join('');
-    }
+      // Depoimentos
+      const tgrid = document.getElementById('testimonials-grid');
+      if (tgrid && Array.isArray(depo)) {
+        tgrid.innerHTML = depo.map(p => `
+          <blockquote class="card quote hoverlift">
+            <p>“${p.quote}”</p>
+            <footer>
+              ${p.avatar ? `<img class="avatar" src="${p.avatar}" alt="${p.name}">` : ``}
+              <span><strong>${p.name}</strong>${p.role ? ` • ${p.role}` : ''}</span>
+            </footer>
+          </blockquote>
+        `).join('');
+      }
 
-    // Depoimentos
-    const tgrid = document.getElementById('testimonials-grid');
-    if (tgrid && Array.isArray(depo)) {
-      tgrid.innerHTML = depo.map(p => `
-        <blockquote class="card quote hoverlift">
-          <p>“${p.quote || ''}”</p>
-          <footer>
-            ${p.avatar ? `<img class="avatar" src="${p.avatar}" alt="${p.name || ''}">` : ``}
-            <span><strong>${p.name || ''}</strong>${p.role ? ` • ${p.role}` : ''}</span>
-          </footer>
-        </blockquote>
-      `).join('');
-    }
+      // Blur-up
+      document.querySelectorAll('img.blur-up').forEach(img => {
+        if (img.complete) img.classList.add('loaded');
+        else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+      });
 
-    // Blur-up: remove blur ao carregar
-    document.querySelectorAll('img.blur-up').forEach(img => {
-      if (img.complete) img.classList.add('loaded');
-      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
-    });
+      // Ano
+      const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+    })();
 
-    // Ano
-    const y = document.getElementById('year');
-    if (y) y.textContent = new Date().getFullYear();
-
-    // Service Worker (PWA leve)
+    // SW registra e força atualização imediata
     if ('serviceWorker' in navigator) {
-      try { await navigator.serviceWorker.register('/sw.js'); } catch {}
+      navigator.serviceWorker.register('/sw.js').then(reg => {
+        if (reg.waiting) reg.waiting.postMessage('SKIP_WAITING');
+        reg.addEventListener('updatefound', () => {
+          const nw = reg.installing;
+          if (nw) {
+            nw.addEventListener('statechange', () => {
+              if (nw.state === 'installed' && navigator.serviceWorker.controller) {
+                nw.postMessage('SKIP_WAITING');
+              }
+            });
+          }
+        });
+      }).catch(()=>{});
     }
-  })();
   </script>
 </body>
 </html>

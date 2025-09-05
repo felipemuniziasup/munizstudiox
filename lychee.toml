@@ -1,3 +1,19 @@
-# Ignore localhost and wa.me schema parameter noise
-exclude = ["http://localhost:5173", "https://wa.me/*"]
-max_redirects = 5
+# Domínios internos não precisam de HEADs agressivos
+max_retries = 2
+timeout = 20
+
+# Ignorar caminhos locais pesados
+exclude_path = [
+  "node_modules/",
+  ".git/",
+  "dist/assets/",
+  "public/assets/"
+]
+
+# Tratar 429/503 com backoff leve
+retry_wait_time = 2
+retry_backoff = true
+
+# Alguns hosts bloqueiam user-agents "genéricos"
+[headers]
+User-Agent = "Mozilla/5.0 (compatible; MSX-LinkCheck/1.0; +https://munizstudiox.com.br)"

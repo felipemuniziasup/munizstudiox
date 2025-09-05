@@ -28,7 +28,7 @@ jobs:
           fi
 
       - name: Install lychee
-        uses: lycheeverse/lychee-action@v1.10.1
+        uses: lycheeverse/lychee-action@v1
         with:
           args: --verbose --no-progress --config ./lychee.toml ${{ steps.choose.outputs.TARGET }}
         env:
