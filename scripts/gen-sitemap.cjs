@@ -1,29 +1,34 @@
-/* Sitemap simples (/ apenas) usando public/data/site.json quando existir */
-const fs = require("fs-extra");
+// scripts/gen-sitemap.cjs
+const { writeFile } = require("fs/promises");
+const path = require("path");
 
-async function run() {
-  let base = "https://munizstudiox.com.br";
-  const siteJson = "public/data/site.json";
-  if (await fs.pathExists(siteJson)) {
-    try {
-      const s = JSON.parse(await fs.readFile(siteJson, "utf8"));
-      if (s.baseUrl) base = s.baseUrl.replace(/\/+$/, "");
-    } catch {}
-  }
+const BASE_URL = "https://munizstudiox.com.br";
 
-  const lastmod = new Date().toISOString();
+async function generateSitemap() {
+  const urls = [
+    { loc: `${BASE_URL}/`, priority: 1.0 },
+  ];
+
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>${base}/</loc>
-    <lastmod>${lastmod}</lastmod>
+${urls
+  .map(
+    (u) => `  <url>
+    <loc>${u.loc}</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+    <priority>${u.priority}</priority>
+  </url>`
+  )
+  .join("\n")}
 </urlset>`;
 
-  await fs.writeFile("public/sitemap.xml", xml.trim() + "\n");
+  const outPath = path.join(__dirname, "../public/sitemap.xml");
+  await writeFile(outPath, xml, "utf8");
   console.log("✅ sitemap.xml atualizado");
 }
 
-run();
+generateSitemap().catch((err) => {
+  console.error("❌ Erro ao gerar sitemap:", err);
+  process.exit(1);
+});
