@@ -2,16 +2,14 @@
   "name": "muniz-studio-x-starter-v1",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "http-server -p 5173 public",
-    "start": "npm run dev",
     "build": "node scripts/build.js",
     "preview:dist": "http-server -p 5174 dist",
-
     "logos": "node scripts/generate-logos.js",
     "optimize": "node scripts/optimize-images.js",
     "sitemap": "node scripts/gen-sitemap.js",
-
     "cf:build": "npm run logos && npm run optimize && npm run sitemap && npm run build"
   },
   "devDependencies": {
