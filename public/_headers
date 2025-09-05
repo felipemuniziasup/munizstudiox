@@ -1,13 +1,24 @@
 /*
+  # HTML não deve cachear (assim a página atualiza sempre)
+  Cache-Control: no-cache, no-store, must-revalidate
+  Pragma: no-cache
+  Expires: 0
   X-Content-Type-Options: nosniff
-  X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
-  Cache-Control: no-store
+
+/sw.js
+  # Service worker também sem cache
+  Cache-Control: no-cache, no-store, must-revalidate
 
 /assets/*
+  # Assets com fingerprint podem cachear forte
   Cache-Control: public, max-age=31536000, immutable
 
-/data/*
+/favicon.svg
+  Cache-Control: public, max-age=86400
+
+/manifest.webmanifest
+  Cache-Control: public, max-age=86400
+
+/sitemap.xml
   Cache-Control: public, max-age=600
-  Access-Control-Allow-Origin: *
