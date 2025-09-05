@@ -2,40 +2,28 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Preview (npm run dev)",
+      "label": "Preview (dev)",
       "type": "shell",
       "command": "npm run dev",
-      "group": { "kind": "build" },
-      "problemMatcher": [],
-      "presentation": { "reveal": "always", "panel": "dedicated", "focus": true }
+      "problemMatcher": []
     },
     {
-      "label": "Deploy (Preview - branch dev)",
+      "label": "Build (prod)",
       "type": "shell",
-      "command": "git checkout -B dev && git add . && git commit --allow-empty -m \"chore: preview (dev)\" && git push -u origin dev",
-      "group": { "kind": "build" },
-      "problemMatcher": [],
-      "presentation": { "reveal": "always", "panel": "dedicated" }
+      "command": "npm run build",
+      "problemMatcher": []
     },
     {
-      "label": "Deploy (Produção - branch main)",
+      "label": "Preview (build)",
       "type": "shell",
-      "command": "git checkout -B main && git add . && git commit --allow-empty -m \"deploy: produção (main)\" && git push -u origin main",
-      "group": { "kind": "build" },
-      "problemMatcher": [],
-      "presentation": { "reveal": "always", "panel": "dedicated" }
+      "command": "npm run preview:dist",
+      "problemMatcher": []
     },
     {
-      "label": "Kill 5173 (liberar porta preview)",
+      "label": "Deploy (push main)",
       "type": "shell",
-      "command": "cmd",
-      "args": [
-        "/d", "/c",
-        "for /f \"tokens=5\" %%a in ('netstat -ano ^| findstr :5173') do taskkill /PID %%a /F"
-      ],
-      "group": { "kind": "build" },
-      "problemMatcher": [],
-      "presentation": { "reveal": "always", "panel": "dedicated" }
+      "command": "git add -A && git commit -m \"deploy: produção (build minificado)\" || echo \"nada para commitar\" && git push origin main",
+      "problemMatcher": []
     }
   ]
 }

@@ -10,9 +10,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Instala deps para build
+        run: |
+          npm ci || npm i
+
+      - name: Build (gera dist)
+        run: npm run build
+
+      - name: Choose target dir
+        id: choose
+        run: |
+          if [ -d "dist" ]; then
+            echo "TARGET=dist" >> $GITHUB_OUTPUT
+          else
+            echo "TARGET=public" >> $GITHUB_OUTPUT
+          fi
+
       - name: Install lychee
-        uses: lycheeverse/lychee-action@v1   # Corrigido: versão estável mais recente
+        uses: lycheeverse/lychee-action@v1.10.1
         with:
-          args: --verbose --no-progress --config ./lychee.toml ./public ./data
+          args: --verbose --no-progress --config ./lychee.toml ${{ steps.choose.outputs.TARGET }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
